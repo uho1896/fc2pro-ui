@@ -18,13 +18,13 @@ import Fc2ProUI from 'fc2pro-ui'
 Vue.use(Fc2ProUI);
 ```
 
-### per component import
-```javascript
-import {timeline} from 'fc2pro-ui'
-Vue.use(timeline);
-```
-
 ## Components
 
 ### fc-timeline
 Simple timeline component, support vertical and horizontal layout.
+
+### per component import
+```javascript
+import {FcTimeline} from 'fc2pro-ui'
+Vue.component(FcTimeline.name, FcTimeline);
+```

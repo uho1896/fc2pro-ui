@@ -1,8 +1,8 @@
-import timeline from './lib/components/timeline/timeline'
+import FcTimeline from './lib/components/timeline/timeline'
 
 // Export as individual components
 export const Components = {
-  timeline,
+  FcTimeline,
 }
 
 const plugin = {
@@ -15,3 +15,7 @@ const plugin = {
 
 // Export as a plugin
 export default plugin
+
+export {
+  FcTimeline
+}
