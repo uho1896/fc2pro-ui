@@ -28,3 +28,5 @@ Simple timeline component, support vertical and horizontal layout.
 import {FcTimeline} from 'fc2pro-ui'
 Vue.component(FcTimeline.name, FcTimeline);
 ```
+### doc
+[fc-timeline](https://github.com/uho1896/fc2pro-ui/blob/master/doc/timeline.md)
