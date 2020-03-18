@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from './components/home'
 import timeline from './components/timeline'
+import container from './components/container'
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/timeline',
     name: 'timeline',
     component: timeline,
+  },
+  {
+    path: '/container',
+    name: 'container',
+    component: container,
   },
 ];
 
