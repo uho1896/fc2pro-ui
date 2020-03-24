@@ -25,6 +25,9 @@ Vue.component(FcTimeline.name, FcTimeline);
 ```
 
 ## Components
-- [fc-container](https://github.com/uho1896/fc2pro-ui/blob/master/doc/container.md)
-- [fc-loadmore](https://github.com/uho1896/fc2pro-ui/blob/master/doc/loadmore.md)
-- [fc-timeline](https://github.com/uho1896/fc2pro-ui/blob/master/doc/timeline.md)
+|Component|platform|
+|:---|:---|
+|[fc-container](https://github.com/uho1896/fc2pro-ui/blob/master/doc/container.md)|PC|
+|[fc-fullscreen](https://github.com/uho1896/fc2pro-ui/blob/master/doc/fullscreen.md)|All|
+|[fc-loadmore](https://github.com/uho1896/fc2pro-ui/blob/master/doc/loadmore.md)|Mobile|
+|[fc-timeline](https://github.com/uho1896/fc2pro-ui/blob/master/doc/timeline.md)|All|

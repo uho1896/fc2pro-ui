@@ -1,6 +1,6 @@
 {
   "name": "fc2pro-ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "author": "uho1896",
   "description": "Simple component made with Vue.js, some uncommon components.",
@@ -42,7 +42,7 @@
     "vue",
     "vuejs",
     "vue-components",
-    "timeline"
+    "ui"
   ],
   "repository": {
     "type": "git",

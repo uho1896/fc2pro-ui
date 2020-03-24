@@ -1,12 +1,13 @@
 import FcTimeline from './lib/components/timeline/timeline'
 import FcContainer from './lib/components/container/container'
 import FcLoadmore from './lib/components/loadmore/loadmore'
+import FcFullscreen from './lib/components/fullscreen/fullscreen'
 
-// Export as individual components
-export const Components = {
+const Components = {
   FcTimeline,
   FcContainer,
   FcLoadmore,
+  FcFullscreen,
 }
 
 const plugin = {
@@ -20,8 +21,10 @@ const plugin = {
 // Export as a plugin
 export default plugin
 
+// Export as individual components
 export {
   FcTimeline,
   FcContainer,
-  FcLoadmore
+  FcLoadmore,
+  FcFullscreen
 }

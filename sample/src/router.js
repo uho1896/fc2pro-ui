@@ -4,6 +4,7 @@ import home from './components/home'
 import timeline from './components/timeline'
 import container from './components/container'
 import loadmore from './components/loadmore'
+import fullscreen from './components/fullscreen'
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/loadmore',
     name: 'loadmore',
     component: loadmore,
+  },
+  {
+    path: '/fullscreen',
+    name: 'fullscreen',
+    component: fullscreen,
   },
 ];
 
