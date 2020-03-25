@@ -17,11 +17,13 @@ export default {
     let supportFullScreen = utils.supportFullScreen();
     let isFullscreen = utils.fullScreenStatus();
     let hasFullscreenSlot = !!this.$slots.fullscreen;
+    let windowHeight = window.outerHeight;
 
     return {
       supportFullScreen,
       isFullscreen,
       hasFullscreenSlot,
+      windowHeight,
     };
   },
   computed: {
@@ -50,6 +52,14 @@ export default {
 
       if (!this.isFullscreen) {
         utils.offFullScreenEvent(this.fullScreenCallback);
+        utils.offResizeEvent(this.resizeCallback);
+      } else {
+        this.windowHeight = window.outerHeight;
+      }
+    },
+    resizeCallback() {
+      if (this.windowHeight > window.outerHeight) {
+        this.exit();
       }
     },
     enter() {
@@ -57,6 +67,8 @@ export default {
         return;
       }
       utils.onFullScreenEvent(this.fullScreenCallback);
+      utils.onResizeEvent(this.resizeCallback);
+
       utils.requestFullscreen(document.body);
     },
     exit() {
