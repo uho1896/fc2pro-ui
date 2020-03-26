@@ -22,7 +22,7 @@ export default {
   props: {
     data: {tyep: Array, required: true},
     direction: {type: String, default: 'vertical'},
-    filling: {type: String, default: '0%'},
+    filling: {type: Number, default: 0},
     color: {type: Object, default: () => ({
       title: '#F7941D',
       content: '#F7941D',
@@ -151,7 +151,7 @@ export default {
           'height': '2px',
           'top': 'calc(50% - 1px)',
           'left': '0',
-          'right': this.filling,
+          'right': `${Math.min(100, Math.max(0, 100 - this.filling))}%`,
           'margin': '0 1%',
         }, common);
       }
@@ -160,7 +160,7 @@ export default {
         'width': '2px',
         'left': 'calc(50% - 1px)',
         'top': '0',
-        'bottom': this.filling,
+        'bottom': `${Math.min(100, Math.max(0, 100 - this.filling))}%`,
         'margin': '1% 0',
       }, common);
     },
@@ -171,6 +171,7 @@ export default {
 <style scoped>
 .box {
   position: relative;
+  width: 100%;
 }
 .title-vertical:after {
   content: '';

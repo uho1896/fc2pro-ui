@@ -39,17 +39,9 @@ export default {
           title: '惊蛰',
           content: '2020-03-05'
         },
-        {
-          title: '清明',
-          content: '2020-04-04'
-        },
-        {
-          title: '谷雨',
-          content: '2020-04-19'
-        },
       ],
       direction: 'horizontal',
-      filling: '50%',
+      filling: 30,
     }
   },
 }
