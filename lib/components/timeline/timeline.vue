@@ -2,11 +2,12 @@
   <div class="box">
     <div :style="styleTimeLine">
       <div v-for="(d, idx) in data" :key="idx" :style="styleTimelineItem">
-        <div :class="isHorizontal ? 'title title-horizontal' : 'title title-vertical'"
-          :style="styleTitle">
+        <div :style="styleTitle">
           {{d.title}}
         </div>
-        <div :style="styleContent">
+        <div :style="styleContent"
+          :class="getContentClass(idx)"
+        >
           <slot :data="d">{{d.content}}</slot>
         </div>
       </div>
@@ -29,6 +30,7 @@ export default {
       node: '#F7941D',
       line: '#F7941D',
       filling: 'black',
+      nodeFilling: 'black',
     })},
     fromStart: {type: Boolean, default: false},
   },
@@ -76,8 +78,6 @@ export default {
       let common = {
         'color': this.color.title,
         'word-break': 'break-word',
-        'position': 'relative',
-        '--nodeColor': this.color.node,
       };
 
       if (this.isHorizontal) {
@@ -98,6 +98,9 @@ export default {
       let common = {
         'color': this.color.content,
         'word-break': 'break-word',
+        'position': 'relative',
+        '--nodeColor': this.color.node,
+        '--nodeFillingColor': this.color.nodeFilling || this.color.filling,
       };
 
       if (this.isHorizontal) {
@@ -165,6 +168,23 @@ export default {
       }, common);
     },
   },
+  methods: {
+    getContentClass(idx) {
+      let cls = [];
+
+      if (this.isHorizontal) {
+        cls.push('content-horizontal');
+      } else {
+        cls.push('content-vertical');
+      }
+
+      if (this.data.length > 0 && (100 * (idx + 1) / this.data.length) <= this.filling) {
+        cls.push('content-filling');
+      }
+
+      return cls.join(' ');
+    },
+  },
 }
 </script>
 
@@ -173,30 +193,32 @@ export default {
   position: relative;
   width: 100%;
 }
-.title-vertical:after {
+.content-vertical:after {
   content: '';
   position: absolute;
   top: 50%;
-  bottom: auto;
   transform: translateY(-50%);
-  right: -17px;
+  left: -17px;
   height: 10px;
   width: 10px;
   border-radius: 50%;
   border: 2px solid var(--nodeColor);
   background-color: var(--nodeColor);
 }
-.title-horizontal:after {
+.content-horizontal:after {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: auto;
   transform: translateX(-50%);
-  bottom: -16px;
+  bottom: 23px;
   height: 10px;
   width: 10px;
   border-radius: 50%;
   border: 2px solid var(--nodeColor);
   background-color: var(--nodeColor);
+}
+.content-filling:after {
+  border: 2px solid var(--nodeFillingColor);
+  background-color: var(--nodeFillingColor);
 }
 </style>

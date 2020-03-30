@@ -15,6 +15,7 @@ props: {
     node: '#F7941D', // node color
     line: '#F7941D', // line color
     filling: 'black', // filling color
+    nodeFilling: 'black', // node filling color
   })},
   fromStart: {type: Boolean, default: false}, // is node start from the begining of container
 }
