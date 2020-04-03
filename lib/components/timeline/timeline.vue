@@ -8,7 +8,7 @@
         <div :style="styleContent"
           :class="getContentClass(idx)"
         >
-          <slot :data="d">{{d.content}}</slot>
+          <slot :data="d"><div>{{d.content}}</div></slot>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@ export default {
   position: relative;
   width: 100%;
 }
-.content-vertical:after {
+.content-vertical > div:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -205,7 +205,7 @@ export default {
   border: 2px solid var(--nodeColor);
   background-color: var(--nodeColor);
 }
-.content-horizontal:after {
+.content-horizontal > div:after {
   content: '';
   position: absolute;
   left: 50%;
