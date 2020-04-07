@@ -217,7 +217,7 @@ export default {
   border: 2px solid var(--nodeColor);
   background-color: var(--nodeColor);
 }
-.content-filling:after {
+.content-filling > div:after {
   border: 2px solid var(--nodeFillingColor);
   background-color: var(--nodeFillingColor);
 }
