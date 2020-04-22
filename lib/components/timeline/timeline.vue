@@ -41,7 +41,7 @@ export default {
     styleTimeLine() {
       let common = {
         'display': 'flex',
-        'justify-content': this.fromStart ? 'space-between' : 'space-evenly',
+        'justify-content': this.fromStart ? 'space-between' : 'space-around',
       };
 
       if (this.isHorizontal) {
