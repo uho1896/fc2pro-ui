@@ -5,6 +5,7 @@ import timeline from './components/timeline'
 import container from './components/container'
 import loadmore from './components/loadmore'
 import fullscreen from './components/fullscreen'
+import ruler from './components/ruler'
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/fullscreen',
     name: 'fullscreen',
     component: fullscreen,
+  },
+  {
+    path: '/ruler',
+    name: 'ruler',
+    component: ruler,
   },
 ];
 
